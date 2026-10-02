@@ -1,11 +1,15 @@
 'use client'
 
+import { useState } from "react";
+
 type AppLogoProps = {
   title: string;
   color: "red" | "blue" | "green" | "orange" | "purple";
 };
 
 export default function AppLogo({title, color}: AppLogoProps) {
+const [subTitle2, setSubTitle2] = useState("create by condingthailand")
+
 const subTitle = "create by codingthailand";
 const dateNow = new Date();
 const timeNow = (
@@ -16,7 +20,9 @@ const isShowTime = true;
 const isShowDate = true;
 
 const onHandleClick = () => {
-  alert("Hello Next.js");
+   setSubTitle2("create by Next.js");
+  //  subTitle = "create by Next.js"; // ไม่ re-render
+  // alert("Hello Next.js");
 }
 
   return (
@@ -25,7 +31,7 @@ const onHandleClick = () => {
 
       <button onClick={onHandleClick}>Click Me</button>
       {/* case1: สร้างตัวแปร text เป็น subtitle */}
-      <small>{subTitle.toUpperCase()}</small>
+      <small>{subTitle.toUpperCase()} | {subTitle2.toUpperCase()}</small>
       {/* case2: สร้างตัวแปร Date เป็น dateNow */}
       {' '}
       <small>{dateNow.toLocaleDateString()}</small>
