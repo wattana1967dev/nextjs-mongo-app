@@ -1,11 +1,11 @@
 'use client'
 
-type ApplogoProps = {
+type AppLogoProps = {
   title: string;
-  color: string;
-}
+  color: "red" | "blue" | "green" | "orange" | "purple";
+};
 
-export default function AppLogo({title, color}: ApplogoProps) {
+export default function AppLogo({title, color}: AppLogoProps) {
 const subTitle = "create by codingthailand";
 const dateNow = new Date();
 const timeNow = (
@@ -22,7 +22,7 @@ const onHandleClick = () => {
   return (
     <>
       <p style={{color: color }}>{title}</p>
-      
+
       <button onClick={onHandleClick}>Click Me</button>
       {/* case1: สร้างตัวแปร text เป็น subtitle */}
       <small>{subTitle.toUpperCase()}</small>
