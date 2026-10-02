@@ -3,6 +3,8 @@ export default function AppLogo() {
 const subTitle = "create by codingthailand";
 const dateNow = new Date();
 const timeNow = <p>{dateNow.toLocaleTimeString()}</p>;
+const isShowTime = true;
+const isShowDate = true;
 
   return (
     <>
@@ -14,7 +16,13 @@ const timeNow = <p>{dateNow.toLocaleTimeString()}</p>;
       <small>{dateNow.toLocaleDateString()}</small>
       {/* case3: สร้างตัวแปร เพจ dateNow เป็น timeNow*/}
       {' '}
-      {timeNow}
+      {
+        isShowTime && <div>ตอนนี้เวลา: {timeNow}</div>
+      }
+      <hr />
+      {
+        isShowDate ? <small>{dateNow.toLocaleDateString()}</small> : <small>{timeNow}</small>
+      }
     </>
   );
 }
