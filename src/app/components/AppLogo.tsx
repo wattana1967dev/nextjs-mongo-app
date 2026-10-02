@@ -1,9 +1,17 @@
 'use client'
 
-export default function AppLogo() {
+type ApplogoProps = {
+  title: string;
+  color: string;
+}
+
+export default function AppLogo({title, color}: ApplogoProps) {
 const subTitle = "create by codingthailand";
 const dateNow = new Date();
-const timeNow = <p>{dateNow.getHours()}: {dateNow.getMinutes()}</p>;
+const timeNow = (
+    <p>
+      {dateNow.getHours()}: {dateNow.getMinutes()}
+    </p>);
 const isShowTime = true;
 const isShowDate = true;
 
@@ -13,7 +21,8 @@ const onHandleClick = () => {
 
   return (
     <>
-      <p style={{color: "green"}}>My Logo</p>
+      <p style={{color: color }}>{title}</p>
+      
       <button onClick={onHandleClick}>Click Me</button>
       {/* case1: สร้างตัวแปร text เป็น subtitle */}
       <small>{subTitle.toUpperCase()}</small>
