@@ -1,14 +1,20 @@
-export default function AppLogo() {
+'use client'
 
+export default function AppLogo() {
 const subTitle = "create by codingthailand";
 const dateNow = new Date();
-const timeNow = <p>{dateNow.toLocaleTimeString()}</p>;
+const timeNow = <p>{dateNow.getHours()}: {dateNow.getMinutes()}</p>;
 const isShowTime = true;
 const isShowDate = true;
+
+const onHandleClick = () => {
+  alert("Hello Next.js");
+}
 
   return (
     <>
       <p style={{color: "green"}}>My Logo</p>
+      <button onClick={onHandleClick}>Click Me</button>
       {/* case1: สร้างตัวแปร text เป็น subtitle */}
       <small>{subTitle.toUpperCase()}</small>
       {/* case2: สร้างตัวแปร Date เป็น dateNow */}
